@@ -9,8 +9,8 @@
 >The logo of our website acts to  redirect the user to home route.
 >The search option redirects to the marketplace of our website.
 >Inside the navbar we can redirect user to :- 
->>Price Prediction page
->>About us page
+>>Price Prediction page,
+>>About us page,
 >>Home page
 
 ![image](https://user-images.githubusercontent.com/68653820/162595866-03310e82-c7cf-4898-98ce-d4138a3c6272.png)
