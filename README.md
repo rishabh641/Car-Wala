@@ -47,6 +47,11 @@
 > Search is to search car via its name In marketplace. </br>
 > ![image](https://user-images.githubusercontent.com/68653820/162596171-fda311c1-e268-45d8-abb7-ca3cc8667a70.png)
 
+## How we Deployed our Model Using Node JS.
+> https://nodejs.org/en/knowledge/child-processes/how-to-spawn-a-child-process/
+> This section of code connects Python file with the Node server so that we can predict the cost of the car according to the input given by User.
+> ![image](https://user-images.githubusercontent.com/68653820/162596326-b29a14ab-fcbd-409f-980c-c121158c683f.png)
+
 
 
 
