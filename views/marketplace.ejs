@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Wala</title>
+    <link rel="icon" href="img/favicon.ico">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/marketplace.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish:wght@200&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    
+
+</head>
+
+<body>
+  
+  <%- include('header') -%>
+
+    <section id="header">
+        <div class="row">
+            <div class="col-lg-6 header-text">
+                <h1 >Welcome to our MarketPlace :-)</h1>
+            </div>
+            <div class="col-lg-4 search-bar">
+                <input type="text" class="form-control" id="filter" placeholder="Search Items...">
+            </div>
+        </div>
+    </section>
+
+    <section id="add-car">
+      <button class="btn btn-primary add-btn">Add Car</button>
+        <div class="container">
+            <div class="title">Add Your Car</div>
+            <div class="content">
+              <form action="/marketplace" method="POST" id="addForm">
+                <div class="user-details">
+                  <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input name="fname" id="fname"type="text" placeholder="Enter your name" >
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Car Name</span>
+                    <input name="cname" id="cname" type="text" placeholder="Enter your Car name" >
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Email</span>
+                    <input  name="email"  id="email" type="text" placeholder="Enter your email" >
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Model number</span>
+                    <input name="model"  id="model" type="text" placeholder="Enter the model number" >
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Company name</span>
+                    <input  name="company" id="company" type="text" placeholder="Enter the Company" >
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Kms Driven</span>
+                    <input  name="kmsDriven"  id="kmsDriven" type="text" placeholder="Current value on Odometer" >
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Fuel type</span>
+                    <input name="fuel"  id="fuel" type="text" placeholder="Enter fuel type" >
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Condition</span>
+                    <input name="condition"  id="condition" type="text" placeholder="Specify the Condition :" >
+                  </div>
+
+                  <div class="input-box">
+                    <span class="details">Price</span>
+                    <input name="price"  id="price" type="text" placeholder="Enter the expected Price" >
+                  </div>
+
+                  <div class="input-box">
+                    <span class="details">Colour</span>
+                    <input name="colour"  id="colour" type="text" placeholder="Enter the Colour of the Car " >
+                  </div>
+
+                  <div class="input-box">
+                    <span class="details">Mileage</span>
+                    <input name="mileage"  id="mileage" type="text" placeholder="Enter the Mileage of the Car">
+                  </div>
+                </div>
+                <div class="action-details">
+                  <input value="test1" name="dot1" type="radio" name="action" id="dot-1">
+                  <input value="test2" name="dot1" type="radio" name="action" id="dot-2">
+                  <span class="action-title">Action</span>
+                  <div class="category">
+                    <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span class="action">Sell</span>
+                  </label>
+                  <label for="dot-2">
+                    <span class="dot two"></span>
+                    <span class="action">Buy</span>
+                  </label>                
+                  </div>
+                </div>  
+                <div class="button">
+                  <button class ="predict-btn" name="submit" type="submit">Add to marketplace</button>
+                </div>
+              </form>
+            </div>
+          </div>
+    </section>
+
+    <hr>
+    
+    <section id="main">
+        <ul id="items" class="list-group item">
+            <% for (let i = 0; i < carsArray.length; i++) { %>
+              <% if(carsArray[i].dot1=='test1') { %>
+              <li class="list-group-item sell"><img src="img/sell-image.png" class="buy-image" alt=""><%= carsArray[i].cname %><button id="<%= i %>" class="btn btn-success btn-lg float-right success view">View</button></li>
+              <% } else { %>
+                <li class="list-group-item buy"><img src="img/buy-image.jpeg" class="sell-image" alt=""><%= carsArray[i].cname %><button  id="<%= i %>"class="btn btn-success btn-lg float-right success view">View</button></li>
+              <% } %>
+            <% } %>
+          </ul>
+    </section>
+    <hr>
+    <section id="details">  
+        <div id="car-details">
+            Owner's Name:  <span class="dfname dtext"> </span><br>
+            Car Name:  <span class="dcname dtext"></span><br>
+            Email:  <span class="demail dtext"></span><br>
+            Model:  <span class="dmodel dtext"></span><br>
+            KmsDriven:  <span class="dkmsDriven dtext"></span><br>
+            Fuel:  <span class="dfuel dtext"></span><br>
+            Condition:  <span class="dcondition dtext"></span><br>
+            Price:  <span class="dprice dtext"></span><br>
+            Colour:  <span class="dcolour dtext"></span><br>
+            Mileage:  <span class="dmileage dtext"></span><br>
+        </div>
+      
+    </section>
+
+    <%- include('footer') -%>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- <script src="js/marketplace.js"></script> -->
+    <script>
+    var a=document.querySelector(".add-btn");
+    a.addEventListener("click",function(e){
+      $(".container").fadeToggle();
+    });
+    
+      if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+      }
+      </script>
+      <script>
+        $(".view").click(function(e){
+        var a=$("#details");
+        var j=e.target.id;
+
+        var test = '<%- JSON.stringify(carsArray) %>';
+        var cars=JSON.parse(test);
+        setTimeout(function(){a.slideDown();}, 1000);
+        
+        document.querySelector(".dfname").textContent=cars[j].fname;
+        document.querySelector(".dcname").textContent=cars[j].cname;
+        document.querySelector(".demail").textContent=cars[j].email;
+        document.querySelector(".dmodel").textContent=cars[j].model;
+        document.querySelector(".dkmsDriven").textContent=cars[j].kmsDriven;
+        document.querySelector(".dfuel").textContent=cars[j].fuel;
+        document.querySelector(".dcondition").textContent=cars[j].condition;
+        document.querySelector(".dprice").textContent=cars[j].price;
+        document.querySelector(".dcolour").textContent=cars[j].colour;
+        document.querySelector(".dmileage").textContent=cars[j].mileage;
+        
+        a.slideUp();
+  });
+  var itemList = document.getElementById('items');
+  var filter = document.getElementById('filter');
+filter.addEventListener('keyup', filterItems);
+
+function filterItems(e){
+  
+  var text = e.target.value.toLowerCase();
+  
+  var items = itemList.getElementsByTagName('li');
+  
+  Array.from(items).forEach(function(item){
+    
+      var itemName = item.textContent;
+      if(itemName.toLowerCase().indexOf(text) != -1){
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+      </script>
+</body>
+</html>
