@@ -27,3 +27,26 @@
 > JS. </br> 
 > Nodejs. </br>
 
+## Libraries Used
+> ![image](https://user-images.githubusercontent.com/68653820/162596045-4350aca0-e198-45fd-a441-9720b3569703.png) </br>
+> ![image](https://user-images.githubusercontent.com/68653820/162596050-42559380-aea0-459a-a1fb-f0c1b9244820.png) </br>
+
+## Training
+> ![image](https://user-images.githubusercontent.com/68653820/162596115-b135e54c-a78e-4836-810c-8cbad3ac3175.png)
+
+## Saving and testing the model
+> ![image](https://user-images.githubusercontent.com/68653820/162596127-4b9b8bbf-9e28-456c-b03e-bbc106552025.png)
+
+## The marketplace place of our website
+> The add car button drops down a form to add a car to the market place </br>
+> View button drops down a section which shows the information of the car </br>
+> Colour code used - </br>
+  >> Green:- Sell car </br>
+  >> Pink:-Buy car </br>
+> Search is to search car via its name In marketplace. </br>
+> ![image](https://user-images.githubusercontent.com/68653820/162596171-fda311c1-e268-45d8-abb7-ca3cc8667a70.png)
+
+
+
+
+
