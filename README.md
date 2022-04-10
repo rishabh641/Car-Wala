@@ -19,11 +19,11 @@
 > ![image](https://user-images.githubusercontent.com/68653820/162595922-bc513ddd-c3ef-4502-9ada-cfaaac89c3dd.png)
 
 ## Tools required
-> Python. 
-> linear Regression.
-> Google Colab. 
-> Github. 
-> HTML.
-> JS. 
-> Nodejs.
+> Python. </br>
+> linear Regression. </br>
+> Google Colab. </br>
+> Github. </br>
+> HTML. </br>
+> JS. </br> 
+> Nodejs. </br>
 
